@@ -50,39 +50,39 @@ public class Rec1A {
         // Note that count is accessed via the Rec1A class, not one of its
         // instances!
         System.out.println("Number of Rec1A objects created at start: " +
-                Rec1A.count);
+                Rec1A.count); //count should be 0
 
-        Rec1A matilda = new Rec1A("Matilda");
+        Rec1A matilda = new Rec1A("Matilda"); //making a new object
 
         // Again, note this is not matilda.count
         System.out.println("Number of Rec1A objects created incl. Matilda: " +
-                Rec1A.count);
+                Rec1A.count); //count should increase to 1
 
         Rec1A lakshmi = new Rec1A("Lakshmi");
         Rec1A owen = new Rec1A("Owen");
 
         System.out.println("Number of Rec1A objects created after two more: " +
-                Rec1A.count);
+                Rec1A.count); //count should now be 3
 
         // Note here that custom is another reference to the same object as
         // matilda!
-        Rec1A custom = matilda;
+        Rec1A custom = owen;
 
         System.out.println("Number of Rec1A objects created incl. custom: " +
-                Rec1A.count);
+                Rec1A.count); // count should still be 3
 
         System.out.println();
 
         Scanner stdin = new Scanner(System.in);
-        System.out.print("Enter a new name: ");
+        System.out.print("Enter a new name: "); //name is Greg
         String name = stdin.nextLine();
         custom.setName(name);
         System.out.println();
 
-        System.out.println("custom's name: " + custom.getName());
-        System.out.println("matilda's name: " + matilda.getName());
-        System.out.println("lakshmi's name: " + lakshmi.getName());
-        System.out.println("owen's name: " + owen.getName());
+        System.out.println("custom's name: " + custom.getName()); //would print Greg
+        System.out.println("matilda's name: " + matilda.getName()); //would print Matilda
+        System.out.println("lakshmi's name: " + lakshmi.getName()); // will print Lakshmi
+        System.out.println("owen's name: " + owen.getName()); //will print Greg
 
     }
 
